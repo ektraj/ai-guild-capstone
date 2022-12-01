@@ -1,7 +1,7 @@
 
 
 #import matplotlib.pyplot as plt
-!pip install tensorflow
+#!pip install tensorflow
 
 import numpy as np
 import os
