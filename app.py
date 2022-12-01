@@ -1,9 +1,11 @@
 
 
 #import matplotlib.pyplot as plt
+!pip install tensorflow
+
 import numpy as np
 import os
-import tensorflow as tf
+#import tensorflow as tf
 from numpy.random import seed
 from collections import deque
 #from tensorflow import set_random_seed
@@ -13,7 +15,7 @@ import numpy as np
 seed=1
 random.seed(seed)
 np.random.seed(seed)
-tf.random.set_seed(seed)
+#tf.random.set_seed(seed)
 from collections import deque
 import streamlit as st
 
