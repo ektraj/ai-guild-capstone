@@ -1,1 +1,2 @@
 apt-get update && apt-get install libgl1
+RUN pip3 install opencv-python-headless==4.5.3.56
