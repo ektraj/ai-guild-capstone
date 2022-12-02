@@ -72,8 +72,8 @@ if modelfile is not None and videofile  is not None:
 
 
     # model
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(device)
+    device = 'cpu' #torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    #print(device)
     #model = torch.load('../input/pytorch-model/pytorch_res18.pth')
     model.to(device)
     videoCapture = cv.VideoCapture(tfile.name)
