@@ -43,7 +43,7 @@ st.write(modelfile)
 
 
 
-if mfile is not None and tfile  is not None:
+if modelfile is not None and videofile  is not None:
     mfile = tempfile.NamedTemporaryFile(delete=False)
     mfile.write(modelfile.read())
     
