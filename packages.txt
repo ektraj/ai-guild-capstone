@@ -1,4 +1,4 @@
 libgl1-mesa-glx
 python3-opencv
-opencv-python
-opencv-python-headless==4.5.3.56
+opencv-contrib-python
+opencv-python-headless
