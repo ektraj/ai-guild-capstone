@@ -38,17 +38,18 @@ from PIL import Image
 # In[ ]:
 
 modelfile = st.file_uploader("Upload model")
-st.write(modelfile)
-mfile = tempfile.NamedTemporaryFile(delete=False)
-# mfile.write(modelfile.read())
-
-
-
 videofile = st.file_uploader("Upload video")
-tfile = tempfile.NamedTemporaryFile(delete=False)
+st.write(modelfile)
+
+
 
 if mfile is not None and tfile  is not None:
+    mfile = tempfile.NamedTemporaryFile(delete=False)
+    mfile.write(modelfile.read())
+    
+    tfile = tempfile.NamedTemporaryFile(delete=False)
     tfile.write(videofile.read())
+    
     model = torch.load(mfile.name)
     CLASSES = {0:"Collapsed Building", 1:"Fire", 2:"Flood", 3:"Normal"}
     BATCH_SIZE = 8
