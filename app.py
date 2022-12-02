@@ -36,14 +36,17 @@ from PIL import Image
 
 # In[ ]:
 
+uploadmodel = st.file_uploader("Upload model")
+mfile = tempfile.NamedTemporaryFile(delete=False)
+mfile.write(f.read())
 
-model = torch.load('pytorch_res18_200.pth')
 
-f = st.file_uploader("Upload file")
+
+f = st.file_uploader("Upload video")
 tfile = tempfile.NamedTemporaryFile(delete=False)
 tfile.write(f.read())
 
-
+model = torch.load(mfile.name)
 CLASSES = {0:"Collapsed Building", 1:"Fire", 2:"Flood", 3:"Normal"}
 BATCH_SIZE = 8
 IMG_SIZE = (224, 224)
