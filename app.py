@@ -38,8 +38,9 @@ from PIL import Image
 # In[ ]:
 
 modelfile = st.file_uploader("Upload model")
-mfile = tempfile.NamedTemporaryFile(delete=False)
-mfile.write(modelfile.read())
+print(modelfile)
+# mfile = tempfile.NamedTemporaryFile(delete=False)
+# mfile.write(modelfile.read())
 
 
 
@@ -124,7 +125,7 @@ while success:
     heatmap = np.uint8(255 * heatmap)
     heatmap = cv2.applyColorMap(heatmap, cv2.COLORMAP_JET)
     superimposed_img  = cv2.addWeighted(heatmap, 0.3, frame, 0.5, 0)
-    if label is "Normal":
+    if label == "Normal":
         color = (0, 150, 0)
         frame = cv2.putText(frame, label+': '+top_probability, (50, 50), 2, 0.5 ,color, 1 )
         videoWriter.write(frame)
