@@ -37,15 +37,15 @@ from PIL import Image
 
 # In[ ]:
 
-uploadmodel = st.file_uploader("Upload model")
+modelfile = st.file_uploader("Upload model")
 mfile = tempfile.NamedTemporaryFile(delete=False)
-mfile.write(f.read())
+mfile.write(modelfile.read())
 
 
 
-f = st.file_uploader("Upload video")
+videofile = st.file_uploader("Upload video")
 tfile = tempfile.NamedTemporaryFile(delete=False)
-tfile.write(f.read())
+tfile.write(videofile.read())
 
 model = torch.load(mfile.name)
 CLASSES = {0:"Collapsed Building", 1:"Fire", 2:"Flood", 3:"Normal"}
