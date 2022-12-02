@@ -1,2 +1,6 @@
 opencv-python
 torchvision
+omnixai
+kaleido
+plotly
+pillow
